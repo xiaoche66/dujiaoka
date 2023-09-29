@@ -15,8 +15,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: dujiaoka123
       MYSQL_DATABASE: dujiaoka
-      MYSQL_USER: root
-      MYSQL_PASSWORD: dujiaoka123
       MYSQL_INITDB_TZ: "Asia/Shanghai"  # 设置时区为亚洲上海
     command: ['--default-authentication-plugin=mysql_native_password']
     volumes:
