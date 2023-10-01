@@ -8,35 +8,3 @@ services:
     environment:
       WEB_DOCUMENT_ROOT: "/app/public"
     tty: true
-    networks:
-      - dujiaoka
-  mysql:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: dujiaoka123
-      MYSQL_DATABASE: dujiaoka
-      MYSQL_INITDB_TZ: "Asia/Shanghai"  # 设置时区为亚洲上海
-    command: ['--default-authentication-plugin=mysql_native_password']
-    volumes:
-      - mysql_data:/var/lib/mysql
-    ports:
-      - "3306:3306"
-    networks:
-      - dujiaoka
-    container_name: mysql_dujiaoka
-    restart: always
-  redis:
-    image: redis:latest
-    ports:
-      - "6379:6379"
-    networks:
-      - dujiaoka
-    container_name: redis_dujiaoka
-    restart: always
-
-volumes:
-  mysql_data:
-
-networks:
-  dujiaoka:
-    driver: bridge
